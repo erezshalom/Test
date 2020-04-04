@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>JavaScript Clock Example</title>
+</head>
+
+<!-- This is a clock that shows the system time -->
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var timerID = null;
+var timerRunning = false;
+
+function stopclock ()
+{
+  if(timerRunning)
+  clearTimeout(timerID);
+  timerRunning = false;
+}
+
+function showtime () 
+{
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds()
+
+  var timeValue = "" + ((hours >12) ? hours -12 :hours)
+  timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+  timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+  timeValue += (hours >= 12) ? " P.M." : " A.M."
+  document.clock.face.value = timeValue;
+
+// you could replace the above with this
+// and have a clock on the status bar:
+// window.status = timeValue;
+
+ 
+  timerRunning = true;
+}
+
+function startclock () 
+{
+// Make sure the clock is stopped
+  stopclock();
+   setInterval("showtime()",1000);
+}
+
+</SCRIPT>
+
+<BODY onLoad="startclock(); timerONE=window.setTimeout" BGCOLOR="000080" TEXT="ffffff">
+
+<CENTER><form name="clock" onSubmit="0">
+
+<input type="text" name="face" size=13 value=""></CENTER>
+
+
+</body>
+</html>

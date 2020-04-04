@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body >
+		<table id="oTbl" border=1>		
+		</table>
+		<br>
+		<table id="oTbl2" border=1>		
+		</table>
+		
+		<script language=javascript>
+		buildTable();buildTable2();
+			function buildTable(){
+				for (var i=0 ;i<4;i++){
+					var row = oTbl.insertRow();
+					for(var j=0;j<4;j++){
+						var cell = row.insertCell();
+						cell.innerText = i + "," + j;
+					}
+				}					
+			}
+			
+			function buildTable2(){
+				var tbody = document.createElement("TBODY")
+				oTbl2.appendChild(tbody);
+				for (var i=0 ;i<4;i++){
+					var row = document.createElement("TR");
+					tbody.appendChild(row);
+					for(var j=0;j<4;j++){
+						var cell = document.createElement("TD");
+						cell.innerText = i + "," + j;
+						row.appendChild(cell);
+					}
+				}					
+				
+			}
+		</script>
+	</body>
+</html>

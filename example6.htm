@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	
+		<script language=javascript>
+//			window.addEventListener( "load", buildTable, false );
+
+			buildTable();
+			function buildTable(){
+				var tbody = document.createElement("TBODY")
+				oTbl2.appendChild(tbody);
+				for (var i=0 ;i<4;i++){
+					var row = document.createElement("TR");
+					tbody.appendChild(row);
+					for(var j=0;j<4;j++){
+						var cell = document.createElement("TD");
+						cell.innerText = i + "," + j;
+						row.appendChild(cell);
+					}
+				}					
+				
+			}
+		</script>
+	</head>
+	<body onload="buildTable()">
+		<br>
+		<table id="oTbl2" border=1>		
+		</table>
+		
+	</body>
+</html>

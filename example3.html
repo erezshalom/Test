@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<script language=javascript>
+var mouse_positions_arr = new Array("No button" , "Left button" , "Right button " , "Left and right buttons  " , "Middle button" , "Left and middle buttons", "Right and middle buttons ", "All three buttons  ");
+
+function moveParams(){
+
+	l1.innerText = window.event.clientX;
+	l2.innerText = window.event.clientY;
+	l3.innerText = window.event.offsetX;
+	l4.innerText = window.event.offsetY;
+	}
+
+
+function showButton(){
+
+
+alert (mouse_positions_arr [window.event.button]  + " was pressed!"); 
+
+
+}
+</script>
+
+<BODY bgcolor=Plum>
+<hr>
+	<table border=1 width=80% height=80%>
+		<tr>
+		<td>
+	<div style="position:relative;width:100%;height:100%"  id=mDiv onmousemove=moveParams() onmousedown=showButton()></div>
+	</td>
+	</tr>
+	</table>
+	
+	<table width=80% height=20%>
+		<tr>
+			<td><label>clientX</label></td>
+			<td><label>clientY</label></td>
+			<td><label>offsetX</label></td>
+			<td><label>offsetY</label></td>
+		</tr>
+		<tr>
+		<td><label id=l1></label></td>
+			<td><label id=l2></label></td>
+			<td><label id=l3></label></td>
+			<td><label id=l4></label></td>
+<P>&nbsp;</P>
+
+</BODY>
+</HTML>

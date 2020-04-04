@@ -1,0 +1,13 @@
+<script type="text/javascript">
+var cookieEnabled=(navigator.cookieEnabled)? true : false
+
+//if not IE4+ nor NS6+
+if (typeof navigator.cookieEnabled=="undefined" && !cookieEnabled){ 
+document.cookie="testcookie"
+cookieEnabled=(document.cookie.indexOf("testcookie")!=-1)? true : false
+}
+
+//if (cookieEnabled) //if cookies are enabled on client's browser
+//do whatever
+
+</script>
